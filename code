@@ -1,1 +1,157 @@
+//starting the program
+var question1;
+var question2;
+var question3;
+onEvent("startbutton", "click", function( ) {
+  setScreen("logInScreen");
+});
+//setting the screen to the home screen when the log in button is clicked
+//log in screen - takes the user input value and shows it with the word hi before it on the home screen top left
+onEvent("loginButton", "click", function( ) {
+  setScreen("homeScreen");
+  setText("hiUserName", "hi " + getText("usernameinput"));
+});
+//when the take quiz button is clicked, it takes you to the questions page
+onEvent("takeQuizButton", "click", function( ) {
+  setScreen("questions");
+});
+//setting the results based on the users dropdown input options
+onEvent("skinresults", "click", function( ) {
+  yesyesyes();
+  yesyesno();
+  yesnoyes();
+  noyesyes();
+  nonono();
+  yesnono();
+  nonoyes();
+  noyesno();
+});
+function yesyesyes() {
+  question1 = getText("dropdown1");
+  question2 = getText("dropdown2");
+  question3 = getText("dropdown3");
+  if (question1 == "yes" && question2 == "yes" && question3 == "yes")
+      setScreen("combinationSkinResults");
+}
+function yesyesno() {
+  question1 = getText("dropdown1");
+  question2 = getText("dropdown2");
+  question3 = getText("dropdown3");
+  if (question1 == "yes" && question2 == "yes" && question3 == "no")
+      setScreen("combinationSkinResults");
+}
+function yesnoyes () {
+question1 = getText("dropdown1");
+question2 = getText("dropdown2");
+question3 = getText("dropdown3");
+if (question1 == "yes" && question2 == "no" &&question3 == "yes")
+      setScreen("combinationSkinResults");
+}
+function noyesyes () {
+question1 = getText("dropdown1");
+question2 = getText("dropdown2");
+question3 = getText("dropdown3");
+if (question1 == "no" && question2 == "yes" &&question3 == "yes")
+      setScreen("combinationSkinResults");
+}
+function nonono () {
+question1 = getText("dropdown1");
+question2 = getText("dropdown2");
+question3 = getText("dropdown3");
+if (question1 == "no" && question2 == "no" &&question3 == "no")
+      setScreen("normalskinresults");
+}
+function yesnono () {
+question1 = getText("dropdown1");
+question2 = getText("dropdown2");
+question3 = getText("dropdown3");
+if (question1 == "yes" && question2 == "no" &&question3 == "no")
+      setScreen("dryskinresults");
+}
+function nonoyes () {
+question1 = getText("dropdown1");
+question2 = getText("dropdown2");
+question3 = getText("dropdown3");
+if (question1 == "no" && question2 == "no" &&question3 == "yes")
+      setScreen("oilyResults");
+}
+function noyesno () {
+question1 = getText("dropdown1");
+question2 = getText("dropdown2");
+question3 = getText("dropdown3");
+if (question1 == "no" && question2 == "yes" &&question3 == "no")
+      setScreen("combinationSkinResults");
+}
+//DRY SKIN: next buttons to take them to the results
+onEvent("nextdryskin", "click", function( ) {
+  setScreen("Productsdry");
+});
+onEvent("gobackdry", "click", function( ) {
+  setScreen("homeScreen");
+});
+onEvent("bckdryskin", "click", function( ) {
+  setScreen("homeScreen");
+});
+onEvent("oily", "click", function( ) {
+  setScreen("productsoily");
+});
+onEvent("combo", "click", function( ) {
+  setScreen("comboskinProducts");
+});
+//OILY SKIN: next buttons to take them to the results
+onEvent("nextoily", "click", function( ) {
+  setScreen("productsoily");
+});
+onEvent("homeoily", "click", function( ) {
+  setScreen("homeScreen");
+});
+onEvent("dryskinnext", "click", function( ) {
+  setScreen("Productsdry");
+});
+onEvent("combonext", "click", function( ) {
+  setScreen("comboskinProducts");
+});
+onEvent("backoily", "click", function( ) {
+  setScreen("homeScreen");
+});
+//COMBO SKIN: next buttons to take them to the results
+onEvent("nextcombination", "click", function( ) {
+  setScreen("comboskinProducts");
+});
+onEvent("nextcombo", "click", function( ) {
+  setScreen("homeScreen");
+});
+onEvent("homecombo", "click", function( ) {
+  setScreen("homeScreen");
+});
+onEvent("drynext", "click", function( ) {
+  setScreen("Productsdry");
+});
+onEvent("oilybutton", "click", function( ) {
+  setScreen("productsoily");
+});
+//NORMAL SKIN: next buttons to take them back
+onEvent("normalhome", "click", function( ) {
+  setScreen("homeScreen");
+});
+onEvent("normalback", "click", function( ) {
+  setScreen("questions");
+});
+// Skin Types Button - from home screen
+onEvent("SkinTypes", "click", function( ) {
+  setScreen("skintypes");
+});
+onEvent("backskintypes", "click", function( ) {
+  setScreen("homeScreen");
+});
+onEvent("nextskintypes", "click", function( ) {
+  setScreen("routineScreen");
+});
+onEvent("routinehomebutton", "click", function( ) {
+  setScreen("homeScreen");
+});
+//Products Button - from home screen
+onEvent("Products", "click", function( ) {
+  setScreen("productsForAllSkin");
+});
 
